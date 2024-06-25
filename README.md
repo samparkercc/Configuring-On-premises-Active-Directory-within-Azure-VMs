@@ -162,6 +162,7 @@ Great job! We have completed Step 2!
   - Flag within Server Manager -> Promote this server to a domain controller -> Add a new forest -> Put mydomain.com as root domain name -> Setup password -> Go through install wizard -> Install
 <p>
 <img width="1440" alt="Screenshot 2024-06-18 at 4 03 59 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/4e990152-1b5a-4056-bf6a-087dac04725c">
+<img width="758" alt="Screenshot 2024-06-25 at 2 55 09 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/f78772ec-bd8b-4ebd-bf8a-a1cc66cd845f">
 
 
 <p>
@@ -198,6 +199,108 @@ Great job! We have completed Step 2!
 <img width="434" alt="Screenshot 2024-06-18 at 4 34 23 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/3d4fa27a-f846-4ee2-8919-a4cfa6166d5f">
 <p>
 
-  - 
+  - Right click on jane doe -> Properties -> Member Of -> Add... -> Type "domain" -> Check Names -> Select "Domain Admins" -> Click OK until "Apply" is an option -> Apply -> OK -> jane doe is now setup as an admin. 
+   <p>
+     <img width="752" alt="Screenshot 2024-06-25 at 3 12 19 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/72ddca80-a92f-47de-902f-45f8b74895a4">
+<img width="409" alt="Screenshot 2024-06-25 at 3 12 28 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/2bb7c33f-2f07-4787-ba51-b87a3f52ddcc">
+<img width="408" alt="Screenshot 2024-06-25 at 3 13 00 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/c0851e06-a832-4be9-a8a8-c7eb2fbdef34">
+<img width="458" alt="Screenshot 2024-06-25 at 3 13 41 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/077cde78-e954-4ecf-ae32-8df9106fe51d">
+<img width="570" alt="Screenshot 2024-06-25 at 3 13 58 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/0733efc5-bc5d-4750-80e3-5efba5818c28">
+<img width="411" alt="Screenshot 2024-06-25 at 3 14 16 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/31cb7ff6-cf3c-4ad9-b0f9-22918d77fd7b">
+<p>
+
+  - Log out of DC-1 VM (Virtual Machine) -> Log back in with mydomain.com\jane_admin and the password setup earlier when jane was created. 
+<p>
+<img width="433" alt="Screenshot 2024-06-25 at 3 22 20 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/83c68cc7-c021-4e25-afee-f432d5c19ba5">
+<p>
+
+  - Congratulations! We've completed step 4!
+
+    <p>
+
+    <h3>Step 5: Join Client-1 to your domain (mydomain.com)</h3>
+      <p>
+
+  - Within Azure -> Copy DC-1 Private IP address -> Client-1 Network Settings -> Network interface -> DNS servers -> Select "Custom" under "DNS servers" -> Paste DC-1's private IP address (make sure there are no spaces around it) -> Save -> Restart Client-1
+ <p>
+<img width="1407" alt="Screenshot 2024-06-25 at 3 33 08 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/36efbd31-193a-4fe7-90af-38417a8c5fa5">
+<img width="277" alt="Screenshot 2024-06-25 at 3 34 17 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/0e3335e8-cc38-4205-b882-ab83d0b29837">
+
+ <img width="789" alt="Screenshot 2024-06-25 at 3 34 27 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/e529fefa-5de7-4867-85da-3b2e41ea0323">
+<img width="356" alt="Screenshot 2024-06-25 at 3 35 24 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/177e3b7e-fb91-462d-a906-162b8461cec1">
+<img width="585" alt="Screenshot 2024-06-25 at 3 37 30 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/e447e98a-bf40-4da3-ae5d-91a42a81998f">
+<img width="605" alt="Screenshot 2024-06-25 at 3 38 43 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/717645a8-8ef9-44ed-93f3-a9cfbeea111c">
+
+ <p>
+   
+  - Log into Client-1 VM -> Right click on Start Menu -> Select "System" -> Rename this PC (advanced) -> Change... -> Select "Domain" under "Member of" and type "mydomain.com" -> OK -> Input jane_admin information -> Restart computer through prompts
+
+    <p>
+<img width="307" alt="Screenshot 2024-06-25 at 3 28 46 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/e58484d1-95bd-4e17-a514-f2e1bc263481">
+<img width="1264" alt="Screenshot 2024-06-25 at 3 29 45 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/02785026-e3bc-4d07-b747-a629d5577523">
+<img width="411" alt="Screenshot 2024-06-25 at 3 30 35 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/a087138f-4dea-4702-a1ee-9fbfc54a2e55">
+
+<img width="320" alt="Screenshot 2024-06-25 at 3 48 03 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/25557bde-ca55-4bde-ae46-85707620c784">
+<img width="456" alt="Screenshot 2024-06-25 at 3 48 49 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/5acba9c6-a17a-4362-9016-912cec078cb5">
+<img width="351" alt="Screenshot 2024-06-25 at 3 50 38 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/3e298f07-c460-439e-a088-8a8ad4e17872">
+<p>
+
+  - Congratulations! We've completed step 5!
+
+  <p>
+
+<h3>Step 6: Setup Remote Desktop for non-administrative users on Client-1</h3>
+ 
+  - Log into Client-1 VM using jane_admin login -> Right click on Start Menu -> System -> Remote Desktop -> Select users that can remotely access this PC -> Add... -> Type "domain users" -> Check Names -> OK through the menus
+    <p>
+
+    <img width="302" alt="Screenshot 2024-06-25 at 3 57 56 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/064de821-0241-4986-881b-e5278148184c">
+
+    <img width="931" alt="Screenshot 2024-06-25 at 3 58 16 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/a74bfae6-c2c6-4694-b802-a4318805f34f">
+<img width="579" alt="Screenshot 2024-06-25 at 3 58 29 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/dfb121f4-ce34-4f2e-b68b-feffb766804f">
+<img width="371" alt="Screenshot 2024-06-25 at 3 58 43 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/ec3455de-c3bd-466d-b37c-3c68239e2b45">
+<img width="454" alt="Screenshot 2024-06-25 at 3 58 54 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/627b7982-7a8d-46eb-8b89-00bf2641fde0">
+<img width="456" alt="Screenshot 2024-06-25 at 3 59 00 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/3cca3ab7-7b21-4780-8abf-63874aca23e6">
+<p>
+
+- Congratulations! We've completed step 6!
+
+  <p>
+
+  <h3>Step 7: Create additional users and attempt to log into client-1 with one of the users</h3>
+
+<p>
+
+  - Log into DC-1 as jane_admin (if not already) -> Type "powershell_ise" in search bar -> Right click on it and select "Run as administrator"
+    <p>
+    <img width="831" alt="Screenshot 2024-06-25 at 4 09 11 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/76f070f8-48a9-4af3-b3fd-13ad3902f6eb">
+
+<p>
+
+  - Create new script -> Copy the code in this link: https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1 -> Paste code into file -> Adjust number of accounts to create to "1000" (It can be adjusted to however many desired). -> Run script 
+<p>
+ 
+<img width="299" alt="Screenshot 2024-06-25 at 4 17 03 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/068f1476-b641-48cc-8e77-b70213370288">
+<img width="1082" alt="Screenshot 2024-06-25 at 4 22 30 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/d880510c-a818-4055-888b-8e6cec29472d">
+
+<img width="810" alt="Screenshot 2024-06-25 at 4 18 45 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/27fe1739-5093-4e8b-9309-8428640ac286">
+<img width="741" alt="Screenshot 2024-06-25 at 4 19 48 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/68dca98b-4ae3-4a77-bf43-30526a3a9347">
+<p>
+
+  - Open Active Directory Users and Computers again -> _EMPLOYEES -> Choose any of the made employees -> Double click on them and copy their Display name
+    <p>
+    <img width="831" alt="Screenshot 2024-06-25 at 4 23 35 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/3f5fb80a-927d-4110-bcb7-c034f2e1df86">
+<img width="918" alt="Screenshot 2024-06-25 at 4 25 02 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/d8bedfb4-0739-473a-b6e8-f007ebd0898d">
+<img width="407" alt="Screenshot 2024-06-25 at 4 25 37 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/87868aa1-cc1d-4f63-bf59-83833275443e">
+
+<p>
+
+  - Log into Client-1 using employee's display name and "Password1" for the password (in the code that is the password that was set for all of them)
+
+    <p>
+<img width="433" alt="Screenshot 2024-06-25 at 4 28 10 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/bca3ab39-5d0b-45e0-a0a0-ab55ffdb0b68">
+<p>
+
+  - If successfully logged in - Congratulations! We've not only completed step 7, but also the this lab! Great job! 
     
-    
+                  
