@@ -117,7 +117,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img width="978" alt="Screenshot 2024-06-18 at 3 32 37 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/68fa69eb-3ccd-4fe4-9645-dade6179dcda">
 <p>
 
-  - Type, "wf.msc" in search bar (wf = Windows Firewall) 
+  - DC-1 -> Type, "wf.msc" in search bar (wf = Windows Firewall) 
 
   - Click on, "wf.msc"
 <p>
@@ -159,9 +159,11 @@ Great job! We have completed Step 2!
 <img width="414" alt="Screenshot 2024-06-18 at 3 56 55 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/100080c7-dad4-4840-b893-dca0b5c65fe3">
 
 
-  - Flag within Server Manager -> Promote this server to a domain controller -> Go through install wizard -> Setup password and root name of domain -> Install
+  - Flag within Server Manager -> Promote this server to a domain controller -> Add a new forest -> Put mydomain.com as root domain name -> Setup password -> Go through install wizard -> Install
 <p>
 <img width="1440" alt="Screenshot 2024-06-18 at 4 03 59 PM" src="https://github.com/samparkercc/Configuring-On-premises-Active-Directory-within-Azure-VMs/assets/171518500/4e990152-1b5a-4056-bf6a-087dac04725c">
+
+
 <p>
 
   - Once kicked out of virtual machine, log back into it using the root domain name you setup and your username. For example, "mydomain.com\labuser" for username and then the password you created 
